@@ -22,6 +22,9 @@ class TodoForm extends React.Component {
             text: this.state.text,
             complete: false,
         });
+        this.setState({
+            text: ""
+        })
     };
     /* create an input to add todos */
     render() {
@@ -33,6 +36,7 @@ class TodoForm extends React.Component {
                     onChange={this.handleChange}
                     type="text"
                     placeholder="Todo..." />
+                <button onClick={this.handleSubmit}>Add Todo</button>
             </form>
         )
     }
