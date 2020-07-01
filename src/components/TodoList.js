@@ -39,7 +39,7 @@ class TodoList extends React.Component {
     /* create function that will delete a todo */
     deleteTodo = id => {
         this.setState({
-            todos: this.state.todos.filter(todo => todo.id !==id)
+            todos: this.state.todos.filter(todo => todo.id !== id)
         })
     }
 
@@ -77,7 +77,7 @@ class TodoList extends React.Component {
         }
 
         return (
-            <div>
+            <div className="container-fluid">
                 <TodoForm onSubmit={this.addTodo} />
                 {/* display number of active todos */}
                 <div>To-Dos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
@@ -87,7 +87,7 @@ class TodoList extends React.Component {
                     <button onClick={() => this.changeDisplayed("active")} >Active</button>
                     <button onClick={() => this.changeDisplayed("completed")} >Completed</button>
                 </div>
-                {this.state.todos.some(todo => todo.complete) ? <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button>: null}
+                {this.state.todos.some(todo => todo.complete) ? <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button> : null}
                 {/* map over todos in the state to display to page */}
                 {todos.map(todo => {
                     return <Todo
