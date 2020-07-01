@@ -2,7 +2,7 @@
 import React from 'react';
 import TodoForm from './TodoForm';
 
-class Todo extends React.Component {
+class TodoList extends React.Component {
     /* Set up initial state */
     state = {
         todos: []
@@ -22,4 +22,4 @@ class Todo extends React.Component {
     }
 }
 
-export default Todo;
+export default TodoList;
