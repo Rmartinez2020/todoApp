@@ -39,7 +39,7 @@ class TodoList extends React.Component {
             <div>
                 <TodoForm onSubmit={this.addTodo} />
                 {/* map over todos in the state to display all to page */}
-                {this.state.todos.map(todo => { return <Todo key={todo.id} toggleStatus={() => this.toggleStatus(todo.id)} text={todo.text} />})}
+                {this.state.todos.map(todo => { return <Todo key={todo.id} toggleStatus={() => this.toggleStatus(todo.id)} todo={todo} />})}
             </div>
         )
     }
