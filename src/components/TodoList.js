@@ -38,6 +38,8 @@ class TodoList extends React.Component {
         return (
             <div>
                 <TodoForm onSubmit={this.addTodo} />
+                {/* display number of active todos */}
+                <div>Todos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
                 {/* map over todos in the state to display all to page */}
                 {this.state.todos.map(todo => { return <Todo key={todo.id} toggleStatus={() => this.toggleStatus(todo.id)} todo={todo} />})}
             </div>
