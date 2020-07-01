@@ -36,7 +36,15 @@ class TodoList extends React.Component {
         });
     };
 
+    /* create function that will change the state of displayed */
+    changeDisplayed = (str) => {
+        this.setState({
+            displayed: str
+        });
+    };
+
     render() {
+
         let todos = [];
         /* check which todos need to be displayed */
         switch (this.state.displayed) {
@@ -47,7 +55,7 @@ class TodoList extends React.Component {
                 todos = this.state.todos.filter(todo => !todo.complete)
                 break;
             case "completed":
-                todos = this.state.todos.filter( todo => todo.complete)
+                todos = this.state.todos.filter(todo => todo.complete)
                 break;
             default:
                 console.log("error processing content to display.")
@@ -59,6 +67,12 @@ class TodoList extends React.Component {
                 <TodoForm onSubmit={this.addTodo} />
                 {/* display number of active todos */}
                 <div>Todos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
+                {/* change the content that will be displayed by clicking on buttons */}
+                <div>
+                    <button onClick={() => this.changeDisplayed("all")} >All</button>
+                    <button onClick={() => this.changeDisplayed("active")} >Active</button>
+                    <button onClick={() => this.changeDisplayed("completed")} >Completed</button>
+                </div>
                 {/* map over todos in the state to display to page */}
                 {todos.map(todo => { return <Todo key={todo.id} toggleStatus={() => this.toggleStatus(todo.id)} todo={todo} /> })}
             </div>
