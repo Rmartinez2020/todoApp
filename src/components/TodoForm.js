@@ -1,5 +1,6 @@
 // === Dependencies ===
 import React from 'react';
+import shortid from 'shortid';
 
 class TodoForm extends React.Component {
     /* Set up initial state */
