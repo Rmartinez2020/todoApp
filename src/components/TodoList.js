@@ -87,7 +87,7 @@ class TodoList extends React.Component {
                     <button onClick={() => this.changeDisplayed("active")} >Active</button>
                     <button onClick={() => this.changeDisplayed("completed")} >Completed</button>
                 </div>
-                <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button>
+                {this.state.todos.some(todo => todo.complete) ? <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button>: null}
                 {/* map over todos in the state to display to page */}
                 {todos.map(todo => {
                     return <Todo
