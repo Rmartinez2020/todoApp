@@ -36,6 +36,13 @@ class TodoList extends React.Component {
         });
     };
 
+    /* create function that will delete a todo */
+    deleteTodo = id => {
+        this.setState({
+            todos: this.state.todos.filter(todo => todo.id !==id)
+        })
+    }
+
     /* create function that will change the state of displayed */
     changeDisplayed = (str) => {
         this.setState({
@@ -74,7 +81,13 @@ class TodoList extends React.Component {
                     <button onClick={() => this.changeDisplayed("completed")} >Completed</button>
                 </div>
                 {/* map over todos in the state to display to page */}
-                {todos.map(todo => { return <Todo key={todo.id} toggleStatus={() => this.toggleStatus(todo.id)} todo={todo} /> })}
+                {todos.map(todo => {
+                    return <Todo
+                        key={todo.id}
+                        toggleStatus={() => this.toggleStatus(todo.id)}
+                        todo={todo}
+                        delete={() => this.deleteTodo(todo.id)} />
+                })}
             </div>
         )
     }
