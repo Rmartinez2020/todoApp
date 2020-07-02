@@ -6,7 +6,7 @@ As a user, I want to be able to create a to do list, so that I can keep track of
 This app was created to practice react skills and handling state. It will be useful for setting up future projects outlines.
 
 ## View Demo
-[Click Here to Test out the App]()
+[Click Here to Test out the App](http://Rmartinez2020.github.io/todoApp)
 <br>
 <img src="./todo.png" alt="Project"
 	title="To Do App" width="500" height="350" />
@@ -21,7 +21,7 @@ This app was created to practice react skills and handling state. It will be use
 
 Rogelio Orosco Martinez - [Rmartinez2020](https://github.com/rmartinez2020)
 
-## Future Update
+## Future Updates
 
 - Add a DB so user can have their To-Do items saved
     - Local Storage
