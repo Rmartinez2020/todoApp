@@ -11,7 +11,9 @@ function Todo(props) {
                 className="float-left"
             >{props.todo.text}</div>
             <button className="btn btn-danger ml-2 float-right" onClick={props.delete}>X</button>
-            <button className="btn float-right" onClick={props.toggleStatus}><i class="far fa-check-square fa-2x"></i></button>
+            <button className="btn float-right" onClick={props.toggleStatus}>
+                {props.todo.complete ? <i class="fas fa-check-square fa-2x"></i>
+                :<i class="far fa-check-square fa-2x"></i>}</button>
         </li>
     )
 }
