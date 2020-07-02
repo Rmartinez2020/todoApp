@@ -78,6 +78,7 @@ class TodoList extends React.Component {
 
         return (
             <div className="container-fluid">
+                <h1> To-Do List</h1>
                 <TodoForm onSubmit={this.addTodo} />
                 {/* display number of active todos */}
                 <div>To-Dos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
@@ -89,6 +90,8 @@ class TodoList extends React.Component {
                 </div>
                 {this.state.todos.some(todo => todo.complete) ? <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button> : null}
                 {/* map over todos in the state to display to page */}
+                <hr />
+                <ul className="list-group m-auto" style={{width: "18rem"}}>
                 {todos.map(todo => {
                     return <Todo
                         key={todo.id}
@@ -96,6 +99,7 @@ class TodoList extends React.Component {
                         todo={todo}
                         delete={() => this.deleteTodo(todo.id)} />
                 })}
+                </ul>
             </div>
         )
     }
