@@ -84,9 +84,9 @@ class TodoList extends React.Component {
                 <div>To-Dos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
                 {/* change the content that will be displayed by clicking on buttons */}
                 <div>
-                    <button onClick={() => this.changeDisplayed("all")} >All</button>
-                    <button onClick={() => this.changeDisplayed("active")} >Active</button>
-                    <button onClick={() => this.changeDisplayed("completed")} >Completed</button>
+                    <button className="btn btn-primary m-2" onClick={() => this.changeDisplayed("all")} >All</button>
+                    <button className="btn btn-success m-2" onClick={() => this.changeDisplayed("active")} >Active</button>
+                    <button className="btn btn-warning m-2" onClick={() => this.changeDisplayed("completed")} >Completed</button>
                 </div>
                 {this.state.todos.some(todo => todo.complete) ? <button onClick={() => this.deleteCompletedTodos()} >Delete Completed To-Dos</button> : null}
                 {/* map over todos in the state to display to page */}
