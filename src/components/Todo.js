@@ -10,7 +10,7 @@ function Todo(props) {
                 }}
                 onClick={props.toggleStatus}
             >{props.todo.text}</div>
-            <button onClick={props.delete}>X</button>
+            <button className="m-2" onClick={props.delete}>X</button>
         </div>
     )
 }

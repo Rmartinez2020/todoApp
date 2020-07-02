@@ -7,12 +7,14 @@ class TodoForm extends React.Component {
     state = {
         text: ""
     };
+
     /* create on change function that will change the state */
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     };
+
     /* create function for submitting the form */
     handleSubmit = (event) => {
         event.preventDefault();
@@ -26,6 +28,7 @@ class TodoForm extends React.Component {
             text: ""
         })
     };
+
     /* create an input to add todos */
     render() {
         return (
@@ -37,7 +40,7 @@ class TodoForm extends React.Component {
                         onChange={this.handleChange}
                         type="text"
                         placeholder="To-Do..." />
-                    <button onClick={this.handleSubmit}>Add To-Do</button>
+                    <button className="btn btn-primary m-2" onClick={this.handleSubmit}>Add To-Do</button>
                 </div>
             </form>
         )
